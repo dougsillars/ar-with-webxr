@@ -38,14 +38,17 @@ class Reticle extends THREE.Object3D {
     let geometry = new THREE.RingGeometry(0.1, 0.11, 24, 1);
     let material = new THREE.MeshBasicMaterial({ color: 0xffffff });
     // Orient the geometry so its position is flat on a horizontal surface
-    geometry.applyMatrix(new THREE.Matrix4().makeRotationX(THREE.Math.degToRad(-90)));
+    
+    //0 is a vertical surface (walls)
+    //180 is horizontal (floors)
+    geometry.applyMatrix(new THREE.Matrix4().makeRotationX(THREE.Math.degToRad(0)));
 
     this.ring = new THREE.Mesh(geometry, material);
 
     geometry = new THREE.PlaneBufferGeometry(0.15, 0.15);
     // Orient the geometry so its position is flat on a horizontal surface,
     // as well as rotate the image so the anchor is facing the user
-    geometry.applyMatrix(new THREE.Matrix4().makeRotationX(THREE.Math.degToRad(-90)));
+    geometry.applyMatrix(new THREE.Matrix4().makeRotationX(THREE.Math.degToRad(0)));
     geometry.applyMatrix(new THREE.Matrix4().makeRotationY(THREE.Math.degToRad(0)));
     material = new THREE.MeshBasicMaterial({
       color: 0xffffff,
@@ -56,7 +59,7 @@ class Reticle extends THREE.Object3D {
 
     // Load the anchor texture and apply it to our material
     // once loaded
-    this.loader.load('../assets/Anchor.png', texture => {
+    this.loader.load('https://res.cloudinary.com/dougsillars/image/upload/q_auto,w_256/c_crop,w_256,h_256/v1552682248/Anchor_rzjbco.png', texture => {
       this.icon.material.opacity = 1;
       this.icon.material.map = texture;
     });
