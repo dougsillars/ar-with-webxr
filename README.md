@@ -1,3 +1,6 @@
+#extended the sample to create an art gallery 
+#optimized all image assets to reduce page load time
+
 # Building an augmented reality application with the WebXR Device API
 
 > ### 🚨 Will not work in latest Chrome Canary 🚨
