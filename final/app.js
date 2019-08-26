@@ -168,6 +168,8 @@ class App {
 							} );
 
 							scene.add( gltf.scene );
+							    
+	});
      /*.then(model => {
     
       this.model = model;
@@ -194,7 +196,7 @@ class App {
     this.reticle = new Reticle(this.session, this.camera);
     this.scene.add(this.reticle);
 
-    this.frameOfRef = await this.session.requestFrameOfReference('eye-level');
+  //  this.frameOfRef = await this.session.requestFrameOfReference('eye-level');
     this.session.requestAnimationFrame(this.onXRFrame);
 
     window.addEventListener('click', this.onClick);
