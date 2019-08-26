@@ -16,6 +16,7 @@
 const MODEL_OBJ_URL = '../assets/ArcticFox_Posed.obj';
 const MODEL_MTL_URL = '../assets/ArcticFox_Posed.mtl';
 const MODEL_SCALE = 0.1;
+const MODEL_GLTF_URL = '../assets/David/scene.gltf';
 
 /**
  * Container class to manage connecting to the WebXR Device API
@@ -152,16 +153,33 @@ class App {
     // resolves to a THREE.Group containing our mesh information.
     // Dont await this promise, as we want to start the rendering
     // process before this finishes.
-    DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
-      this.model = model;
+   // DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
+      // Instantiate a loader
+		var loader = new THREE.GLTFLoader();
+        loader.load(
+	      // resource URL
+	       MODEL_GLTF_URL,
+	// called when the resource is loaded
+	function ( gltf ) {
+
+		scene.add( gltf.scene );
+
+		gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Scene
+		gltf.scenes; // Array<THREE.Scene>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
+
+	},
+  //    this.model = model;
 
       // Some models contain multiple meshes, so we want to make sure
       // all of our meshes within the model case a shadow.
-      this.model.children.forEach(mesh => mesh.castShadow = true);
+    //  this.model.children.forEach(mesh => mesh.castShadow = true);
 
       // Every model is different -- you may have to adjust the scale
       // of a model depending on the use.
-      this.model.scale.set(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
+   //   this.model.scale.set(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
     });
 
     // We'll update the camera matrices directly from API, so
