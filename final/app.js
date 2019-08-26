@@ -16,7 +16,7 @@
 const MODEL_OBJ_URL = '../assets/ArcticFox_Posed.obj';
 const MODEL_MTL_URL = '../assets/ArcticFox_Posed.mtl';
 const MODEL_SCALE = 0.1;
-const MODEL_GLTF = '../assets/David/scene.gltf';
+const MODEL_GLTF = '../assets/david/scene.gltf';
 
 /**
  * Container class to manage connecting to the WebXR Device API
@@ -196,7 +196,7 @@ class App {
     this.reticle = new Reticle(this.session, this.camera);
     this.scene.add(this.reticle);
 
-  //  this.frameOfRef = await this.session.requestFrameOfReference('eye-level');
+    this.frameOfRef = await this.session.requestFrameOfReference('eye-level');
     this.session.requestAnimationFrame(this.onXRFrame);
 
     window.addEventListener('click', this.onClick);
