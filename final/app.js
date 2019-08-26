@@ -154,8 +154,20 @@ class App {
     // Dont await this promise, as we want to start the rendering
     // process before this finishes.
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
-    const gltfLoader = new THREE.GLTFLoader();
-     gltfLoader.load(MODEL_GLTF, (gltf));
+    var loader = new GLTFLoader().setPath(MODEL_GLTF);
+    loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
+
+							gltf.scene.traverse( function ( child ) {
+
+								if ( child.isMesh ) {
+
+									child.material.envMap = envMap;
+
+								}
+
+							} );
+
+							scene.add( gltf.scene );
      /*.then(model => {
     
       this.model = model;
