@@ -154,7 +154,8 @@ class App {
     // Dont await this promise, as we want to start the rendering
     // process before this finishes.
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
-    loader.load(MODEL_GLTF).then(model => {
+    const gltfLoader = new THREE.GLTFLoader();
+     gltfLoader.load(MODEL_GLTF, (gltf) =>.then(model => {
     
       this.model = model;
 
