@@ -155,7 +155,7 @@ class App {
     // process before this finishes.
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
     const gltfLoader = new THREE.GLTFLoader();
-     gltfLoader.load(MODEL_GLTF, (gltf) =>.then(model => {
+     DemoUtils.gltfLoader.load(MODEL_GLTF, (gltf) =>.then(model => {
     
       this.model = model;
 
