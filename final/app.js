@@ -155,7 +155,8 @@ class App {
     // process before this finishes.
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
     const gltfLoader = new THREE.GLTFLoader();
-     gltfLoader.load(MODEL_GLTF, (gltf)).then(model => {
+     gltfLoader.load(MODEL_GLTF, (gltf));
+     /*.then(model => {
     
       this.model = model;
 
@@ -167,6 +168,7 @@ class App {
       // of a model depending on the use.
       this.model.scale.set(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
     });
+    */
 
     // We'll update the camera matrices directly from API, so
     // disable matrix auto updates so three.js doesn't attempt
