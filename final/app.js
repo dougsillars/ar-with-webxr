@@ -153,7 +153,9 @@ class App {
     // resolves to a THREE.Group containing our mesh information.
     // Dont await this promise, as we want to start the rendering
     // process before this finishes.
-    DemoUtils.loadModel(MODEL_GLTF).then(model => {
+    //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
+    loader.load(MODEL_GLTF).then(model => {
+    
       this.model = model;
 
       // Some models contain multiple meshes, so we want to make sure
