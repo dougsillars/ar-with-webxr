@@ -155,7 +155,7 @@ class App {
     // process before this finishes.
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
     const loader = new THREE.GLTFLoader();
-    loader.load( MODEL_GLTF, function ( gltf ) =>{
+    loader.load( MODEL_GLTF, function ( gltf ) {
 							this.model= gltf.scene;
 							//gltf.scene.traverse( function ( child ) {
 						//		if ( child.isMesh ) {
