@@ -166,8 +166,8 @@ class App {
     
     
     const loader = new THREE.DRACOLoader();
-        //loader.setDRACOLoader( new THREE.DRACOLoader() );
-    //THREE.DRACOLoader.setDecoderPath( '/ar-with-webxr/draco/' );
+        loader.setDRACOLoader( new THREE.DRACOLoader() );
+    THREE.DRACOLoader.setDecoderPath( '/ar-with-webxr/draco/' );
 
     loader.load( MODEL_GLTF, gltf => onLoad(gltf));
     
