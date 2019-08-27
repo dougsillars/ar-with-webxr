@@ -156,7 +156,9 @@ class App {
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
     
     const onLoad = (gltf) => {
+        var scale = 0.5;
 	    const model = gltf.scene.children[ 0 ];
+	    model.scale.set (scale,scale,scale);
 		this.model = model;
     };
     
