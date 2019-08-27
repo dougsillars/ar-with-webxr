@@ -16,8 +16,8 @@
 const MODEL_OBJ_URL = '../assets/ArcticFox_Posed.obj';
 const MODEL_MTL_URL = '../assets/ArcticFox_Posed.mtl';
 const MODEL_SCALE = 1.0;
-const MODEL_GLTF = '../assets/daviddraco1.gltf';
-
+const MODEL_GLTF = '../assets/daviddraco.gltf';
+             
 /**
  * Container class to manage connecting to the WebXR Device API
  * and handle rendering on every frame.
