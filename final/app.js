@@ -15,7 +15,7 @@
 
 const MODEL_OBJ_URL = '../assets/ArcticFox_Posed.obj';
 const MODEL_MTL_URL = '../assets/ArcticFox_Posed.mtl';
-const MODEL_SCALE = 0.1;
+const MODEL_SCALE = 0.5;
 const MODEL_GLTF = '../assets/david/scene.gltf';
 
 /**
@@ -156,10 +156,12 @@ class App {
     //DemoUtils.loadModel(MODEL_OBJ_URL, MODEL_MTL_URL).then(model => {
     
     const onLoad = (gltf) => {
-        var scale = 0.5;
+       
 	    const model = gltf.scene.children[ 0 ];
-	    model.scale.set (scale,scale,scale);
+	
 		this.model = model;
+		this.model.children.forEach(mesh => mesh.castShadow = true);
+		this.model.scale.set(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
     };
     
     
@@ -303,7 +305,7 @@ class App {
       // Rather than using the rotation encoded by the `modelMatrix`,
       // rotate the model to face the camera. Use this utility to
       // rotate the model only on the Y axis.
-      DemoUtils.lookAtOnY(this.model, this.camera);
+      //DemoUtils.lookAtOnY(this.model, this.camera);
 
       // Now that we've found a collision from the hit test, let's use
       // the Y position of that hit and assume that's the floor. We created
