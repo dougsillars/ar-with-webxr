@@ -165,7 +165,7 @@ class App {
     };
     
     
-    const loader = new THREE.GLTFoader();
+    const loader = new THREE.GLTFLoader();
     // loader.setDRACOLoader( new THREE.DRACOLoader() );
     THREE.DRACOLoader.setDecoderPath( '../ar-with-webxr/draco/' );
     // loader.setDRACOLoader( new THREE.DRACOLoader() );
